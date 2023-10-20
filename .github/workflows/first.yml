@@ -24,4 +24,3 @@ jobs:
       - name: goodbye world
         run: echo "Goodbye world"
         shell: bash
-    
