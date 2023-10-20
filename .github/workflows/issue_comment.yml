@@ -27,11 +27,8 @@ jobs:
     steps:
       - name: Create comment with API
         run: |
-          gh api \
-            --method POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/${GITHUB_REPOSITORY}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+          gh api -X POST \
+            http://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
             -f body='
             Comment but from the API call not action
             '
